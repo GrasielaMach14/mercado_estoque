@@ -1,5 +1,4 @@
-<!--<a href="https://br.freepik.com/fotos-vetores-gratis/padrao">Padrão foto criado por freepik - br.freepik.com</a>
-<link href="webroot/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--<a href="https://br.freepik.com/fotos-vetores-gratis/padrao">Padrão foto criado por freepik - br.freepik.com</a>-->
 <h1>Produtos</h1>
 <button  style="background-color:#9FA6A83D"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>
 <table>
@@ -8,6 +7,7 @@
         <th>Nome do Produto</th>
         <th>Preço</th>
         <th>Data de criação</th>
+        <th>Ação</th>
     </tr>
 
     <!-- Aqui é onde iremos iterar nosso objeto de solicitação $articles, exibindo informações de artigos -->
@@ -32,6 +32,6 @@
     </tr>
     <?php endforeach; ?>
 </table>
-<footer>
+<!--<footer>
     <p style="color: bisque;font-size: 11px;padding: 5px;">Desenvolvido por Grasiela usando CakePhp 3.x</p>
-</footer>
+</footer>-->
