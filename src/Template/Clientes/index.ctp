@@ -1,6 +1,5 @@
 <!--<a href="https://br.freepik.com/fotos-vetores-gratis/padrao">Padrão foto criado por freepik - br.freepik.com</a>-->
 <h1>Clientes</h1>
-<button  style="background-color:#9FA6A83D"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>
 <table>
     <tr>
         <th>Id</th>
@@ -9,7 +8,6 @@
         <th>Created</th>
         <th>Ação</th>
     </tr>
-
     <!-- Aqui é onde iremos iterar nosso objeto de solicitação $articles, exibindo informações de artigos -->
 
     <?php foreach ($clientes as $cliente): ?>
@@ -32,3 +30,4 @@
     </tr>
     <?php endforeach; ?>
 </table>
+<button class="btnAdd"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>

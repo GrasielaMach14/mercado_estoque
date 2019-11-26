@@ -19,8 +19,9 @@ namespace App\Controller;
             $cliente = $this->Clientes->newEntity();
             if ($this->request->is('post')) {
                 $cliente = $this->Clientes->patchEntity($cliente, $this->request->getData());
+                $cliente->user_id = $this->Auth->user('id');
                 if ($this->Clientes->save($cliente)) {
-                    $this->Flash->success(__('Cliente adiicionado com sucesso.'));
+                    $this->Flash->success(__('Cliente adicionado com sucesso.'));
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Não é possível adicionar cliente.'));
@@ -50,6 +51,24 @@ namespace App\Controller;
                 $this->Flash->success(__('Cliente com id: {0} foi deletado.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
+        }
+
+        public function isAuthorized($user)
+        {
+            if ($this->request->getParam('action') === 'add') {
+                return true;
+            }
+        
+            // Apenas o proprietário do artigo pode editar e excluí
+            if (in_array($this->request->getParam('action'), ['edit', 'delete'])) {
+                $clienteId = (int)$this->request->getParam('pass.0');
+                
+                if ($this->Clientes->isOwnedBy($clienteId, $user['id'])) {
+                    return true;
+                }
+            }
+        
+            return parent::isAuthorized($user);
         }
     }
 

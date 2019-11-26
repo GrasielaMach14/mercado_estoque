@@ -18,6 +18,10 @@ use Cake\ORM\Table;
 
             return $validator;
         }
+        public function isOwnedBy($clienteId, $userId)
+        {
+            return $this->exists(['id' => $clienteId, 'user_id' => $userId]);
+        }
     }
 
 ?>

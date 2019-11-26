@@ -1,6 +1,5 @@
 <!--<a href="https://br.freepik.com/fotos-vetores-gratis/padrao">Padrão foto criado por freepik - br.freepik.com</a>-->
 <h1>Produtos</h1>
-<button  style="background-color:#9FA6A83D"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>
 <table>
     <tr>
         <th>Id</th>
@@ -18,7 +17,7 @@
         <td>
             <?= $this->Html->link($produto->nome, ['action' => 'view', $produto->id]) ?>
         </td>
-        <td><?= $produto->preco ?></td>
+        <td><?= $this->Money->format($produto->preco) ?></td>   
         <td><?= $produto->created ?></td>
         <td>
             <?= $this->Html->link('Editar', ['action' => 'edit', $produto->id]) ?>
@@ -32,6 +31,7 @@
     </tr>
     <?php endforeach; ?>
 </table>
+<button class="btnAdd"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>
 <!--<footer>
     <p style="color: bisque;font-size: 11px;padding: 5px;">Desenvolvido por Grasiela usando CakePhp 3.x</p>
 </footer>-->

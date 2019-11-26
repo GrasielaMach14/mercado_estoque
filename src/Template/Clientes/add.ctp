@@ -6,3 +6,5 @@
     echo $this->Form->button(__('Cadastrar'));
     echo $this->Form->end();
 ?>
+<button class="btnV"><?= $this->Html->Link('Voltar', ['action' => 'index']);?></button>
+

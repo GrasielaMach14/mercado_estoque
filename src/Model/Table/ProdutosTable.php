@@ -18,6 +18,11 @@ class ProdutosTable extends Table
 
         return $validator;
     }
+
+    public function isOwnedBy($produtoId, $userId)
+    {
+        return $this->exists(['id' => $produtoId, 'user_id' => $userId]);
+    }
 }
 
 

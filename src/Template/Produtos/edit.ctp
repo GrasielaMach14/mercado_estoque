@@ -6,3 +6,4 @@
     echo $this->Form->button(__('Alterar'));
     echo $this->Form->end();
 ?>
+<button><?= $this->Html->Link('Voltar', ['style' => 'color: #ffff;', 'controller' => 'produtos', 'action' => 'index']);?></button>
