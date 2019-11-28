@@ -42,7 +42,7 @@ a {
     box-shadow: 2px 2px #aab1bb;
 }
 
-.btnV button{
+.btnV {
     color: #FFFF;
 }
 
@@ -532,16 +532,24 @@ div.message.hidden {
     width: 100%;
 }
 
-.usercontainer{
+.usercontainer {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
 
-.conteudo1{
-    margin-left: 140px;
-    width: 65%;
+.displaycontainer {
+    display: block;
+    margin-left: auto;
+    width: 80%;
+    margin-right: inherit;
+}
+
+.conteudo { 
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
 
 /* Force equal height by overflowing */
@@ -561,6 +569,11 @@ div.message.hidden {
     }
     .barra{
         display: none;
+    }
+    .displaycontainer{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     footer{
         margin-top: -50px;

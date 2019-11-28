@@ -9,7 +9,7 @@
     <body>
         <h1 class="text-center" style="margin-bottom: 7%;">Mercado XX Salvador</h1>
         <div class="container text-center">
-            <div class="row conteudo" style="margin-left: 120px;">
+            <div class="row conteudo" style="margin-left:150px;">
                 <div class="col-sm-4">
                     <h3 class="text-center"><?= $this->Html->Link('Clientes', ['controller' => 'clientes', 'action' => 'index']);?>
                     <br><br>

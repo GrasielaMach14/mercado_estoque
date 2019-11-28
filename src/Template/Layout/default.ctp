@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Mercado Salvador XX';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('menubar.css') ?>
+    <?= $this->Html->css('janela.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -41,7 +42,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a href="#"><?= $this->Html->Link('Home', ['controller' => '#']);?></a>
             <a href="#"><?= $this->Html->Link('Clientes', ['controller' => 'clientes', 'action' => 'index']);?></a>
             <a href="#"><?= $this->Html->Link('Produtos', ['controller' => 'produtos', 'action' => 'index']);?></a>
-            <a href="#">Estoque</a>
+            <a href="#"><?= $this->Html->Link('Estoque', ['controller' => 'estoques', 'action' => 'index']);?></a>
             <a href="#"><?= $this->Html->Link('Login', ['controller' => 'users', 'action' => 'login']);?></a>
             <a href="#"><?= $this->Html->Link('Logout', ['controller' => 'users', 'action' => 'logout']);?></a>
             <a href="#"><?= $this->Html->Link('Inscreva-se', ['controller' => 'users', 'action' => 'add']);?></a>
@@ -69,5 +70,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <p style="color: bisque;font-size: 11px;padding: 5px;">Desenvolvido por Grasiela usando CakePhp 3.x</p>
     </footer>
     <script src="webroot/js/menubar.js"></script>
+    <script src="webroot/js/janela.js"></script>    
 </body>
 </html>
