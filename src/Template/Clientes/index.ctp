@@ -30,5 +30,15 @@
         </tr>
         <?php endforeach; ?>
     </table>
+    <div class="paginator">
+        <ul class="pagination">
+            <?php
+                echo $this->Paginator->prev('Voltar');
+                echo $this->Paginator->numbers();
+                echo $this->Paginator->next('Avançar');
+            ?>
+        </ul>
+    </div>
+
     <button class="btnAdd"><?= $this->Html->link('Incluir', ['action' => 'add']) ?></button>
 </div>

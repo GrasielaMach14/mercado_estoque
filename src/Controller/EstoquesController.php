@@ -4,10 +4,20 @@ namespace App\Controller;
 
     class EstoquesController extends AppController 
     {
+        public $paginate = [
+            'limit' => 3
+        ];
+    
+        public function initialize(){
+            parent::initialize();
+            $this->loadComponent('Paginator');
+        }
+
         public function index()
         {
             $estoques = $this->Estoques->find('all');
             $this->set(compact('estoques'));
+            $this->set('estoques', $this->paginate($estoques));
         }
         public function view($id = null)
         {
@@ -20,13 +30,22 @@ namespace App\Controller;
             if ($this->request->is('post')) {
                 $estoque = $this->Estoques->patchEntity($estoque, $this->request->getData());
                 $estoque->user_id = $this->Auth->user('id');
+                //$estoque = $this->Estoques->find('all')->contain(['Clientes']);
+                
                 if ($this->Estoques->save($estoque)) {
                     $this->Flash->success(__('Movimentação do estoque adicionado com sucesso.'));
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Não é possível adicionar a movimentação.'));
             }
+            
             $this->set('estoque', $estoque);
+
+            /*$this->loadModel('Cliente');
+            $cliente = $this->Cliente->find('list');
+
+            $this->loadModel('Produto');
+            $produto = $this->Produto->find('list');*/
         }
         public function edit($id = null)
         {

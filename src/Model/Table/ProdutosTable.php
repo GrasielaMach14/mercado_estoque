@@ -14,7 +14,9 @@ class ProdutosTable extends Table
     {
         $validator
             ->notEmpty('nome')
-            ->notEmpty('preco');
+            ->notEmpty('preco',[
+                'rule' => ['decimal', 2],
+                'message' => 'Este campo só aceita números. Ex: 0,00']);
 
         return $validator;
     }

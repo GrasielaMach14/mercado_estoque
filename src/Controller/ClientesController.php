@@ -4,10 +4,20 @@ namespace App\Controller;
 
     class ClientesController extends AppController 
     {
+        public $paginate = [
+            'limit' => 3
+        ];
+    
+        public function initialize(){
+            parent::initialize();
+            $this->loadComponent('Paginator');
+        }
+
         public function index()
         {
             $clientes = $this->Clientes->find('all');
             $this->set(compact('clientes'));
+            $this->set('clientes', $this->paginate($clientes));
         }
         public function view($id = null)
         {

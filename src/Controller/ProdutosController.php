@@ -3,11 +3,21 @@ namespace App\Controller;
 
 class ProdutosController extends AppController
 {
+    public $paginate = [
+        'limit' => 3
+    ];
+
+    public function initialize(){
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
 
     public function index()
     {
         $produtos = $this->Produtos->find('all');
         $this->set(compact('produtos'));
+
+        $this->set('produtos', $this->paginate($produtos));
     }
     public function view($id = null)
     {
