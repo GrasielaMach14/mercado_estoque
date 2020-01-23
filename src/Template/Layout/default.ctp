@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'Mercado Salvador XX';
+$cakeDescription = 'Mercado XX';
 ?>
 <!DOCTYPE html>
 <html>

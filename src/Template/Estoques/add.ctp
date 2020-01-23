@@ -17,11 +17,11 @@
         echo $this->Form->button(__('Cadastrar'));
         echo $this->Form->end();
     ?>
-   <!-- <div class="modal" id="addModal" tabindex="-1" role="dialog">
+<!--<div class="modal" id="addModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

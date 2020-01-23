@@ -360,8 +360,7 @@ pre {
     background: #01545b;
 }
 
-.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background-image: url('../webroot/img/glass.jpg');
+.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button){    
     padding: 120px;
 }
 

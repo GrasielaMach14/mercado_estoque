@@ -16,11 +16,11 @@
 
         <?php foreach ($estoques as $estoque): ?>
         <tr>
-            <td><?= $estoque->id ?></td>
-            <td><?= $estoque->cliente_id ?></td>
             <td>
-                <?= $this->Html->link($estoque->produto_id, ['action' => 'view', $estoque->id]) ?>
+                <?= $this->Html->link($estoque->id, ['action' => 'view', $estoque->id]) ?>
             </td>
+            <td><?= $estoque->cliente_id ?></td>
+            <td><?= $estoque->produto_id ?></td>
             <td><?= $estoque->quantidade ?></td>
             <td><?= $estoque->tipo ?>
                 <?php if($estoque->tipo == 1){echo "Entrada";}else{echo "Saída";} ?>
